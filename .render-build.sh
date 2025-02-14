@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# Render automatically sets JAVA_HOME if JAVA_VERSION is set
+# Print JAVA_HOME path
 echo "JAVA_HOME is set to: $JAVA_HOME"
-ls -l $JAVA_HOME  # Check if Java exists
-ls -l $JAVA_HOME/bin  # Check Java binaries
-java -version  # Verify Java is working
 
-# Make mvnw executable and run build
+# Verify if Java is installed
+ls -l $JAVA_HOME
+ls -l $JAVA_HOME/bin
+java -version  # Check Java version
+
+# Make mvnw executable and run Maven build
 chmod +x mvnw
 ./mvnw clean install
