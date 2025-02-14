@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Detect Java path
-export JAVA_HOME=$(dirname $(dirname $(which java)))
+# Manually set JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 # Print JAVA_HOME to verify
 echo "JAVA_HOME is set to: $JAVA_HOME"
