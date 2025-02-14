@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Install Java 17
-apt-get update && apt-get install -y openjdk-17-jdk
-
-# Set Java environment
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+# Find Java path dynamically
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 export PATH=$JAVA_HOME/bin:$PATH
 
-# Debugging: Check Java version
+# Debugging: Print Java Path
 echo "JAVA_HOME is set to: $JAVA_HOME"
 java -version
 
