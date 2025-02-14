@@ -1,13 +1,18 @@
 #!/bin/bash
 
-# Print JAVA_HOME path
+# Print environment variables for debugging
 echo "JAVA_HOME is set to: $JAVA_HOME"
 
-# Verify if Java is installed
-ls -l $JAVA_HOME
-ls -l $JAVA_HOME/bin
-java -version  # Check Java version
+# Check if Java is installed
+which java
+java -version
 
-# Make mvnw executable and run Maven build
+# List contents of JAVA_HOME (if it's set)
+if [ -n "$JAVA_HOME" ]; then
+  ls -l "$JAVA_HOME"
+  ls -l "$JAVA_HOME/bin"
+fi
+
+# Run Maven Build
 chmod +x mvnw
 ./mvnw clean install
