@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Find Java path dynamically
-export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
-export PATH=$JAVA_HOME/bin:$PATH
+# Detect Java path
+export JAVA_HOME=$(dirname $(dirname $(which java)))
 
-# Debugging: Print Java Path
+# Print JAVA_HOME to verify
 echo "JAVA_HOME is set to: $JAVA_HOME"
-java -version
 
-# Make Maven wrapper executable and build
+# Make mvnw executable
 chmod +x mvnw
+
+# Run Maven build
 ./mvnw clean install
