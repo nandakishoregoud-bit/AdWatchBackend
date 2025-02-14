@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Set Java to Render's default path
-export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+# Automatically find Java path
+export JAVA_HOME=$(update-java-alternatives -l | awk '{print $3}')
 export PATH=$JAVA_HOME/bin:$PATH
 
-# Debugging: Print Java details
+# Debugging: Check Java version
 echo "JAVA_HOME is set to: $JAVA_HOME"
 java -version
 
