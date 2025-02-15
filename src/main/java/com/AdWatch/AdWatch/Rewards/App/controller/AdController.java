@@ -17,7 +17,6 @@ public class AdController {
     @Autowired
     private AdService adService;
 
-    
     // Record Ad Watch
     @PostMapping("/watch")
     public ResponseEntity<String> recordAdWatch(@RequestParam Long userId, @RequestParam int adDuration) {
@@ -43,7 +42,6 @@ public class AdController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to record ad watch.");
         }
     }
-
 
     private void sendRewardToBackend(long userId, int coinsEarned) {
         String url = "http://your-spring-boot-api/api/ads/reward?userId=" + userId + "&coinsEarned=" + coinsEarned;

@@ -60,7 +60,6 @@ public class WalletController {
     }
 
 
-    //We don't use this code any where
     // Get Reward History
     @GetMapping("/reward-history/{userId}")
     public ResponseEntity<List<RewardDto>> getRewardHistory(@PathVariable Long userId) {
