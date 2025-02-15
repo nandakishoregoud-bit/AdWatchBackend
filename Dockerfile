@@ -21,3 +21,10 @@ EXPOSE 8080
 
 # Run the Spring Boot application
 CMD ["java", "-jar", "target/your-app-name.jar"]
+
+# Set environment variables in Dockerfile
+ENV DATABASE_URL="jdbc:mysql://your-db-host:3306/adss?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC"
+ENV DB_USERNAME="root"
+ENV DB_PASSWORD="root"
+ENV MAIL_USERNAME="yvvnandak@gmail.com"
+ENV MAIL_PASSWORD="sqcv jvpv nnxv ppcd"
