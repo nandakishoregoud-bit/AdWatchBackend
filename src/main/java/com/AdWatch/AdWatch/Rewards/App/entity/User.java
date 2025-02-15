@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
-@RequiredArgsConstructor 
 
 @Entity
 @Table(name = "users")
