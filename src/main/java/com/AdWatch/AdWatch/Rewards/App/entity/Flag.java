@@ -16,9 +16,11 @@ public class Flag {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "comment_id", nullable = true)
     private Comment comment;
 
     @ManyToOne
+    @JoinColumn(name = "question_id", nullable = true)
     private Question question;
 
     private String reason;
@@ -35,23 +37,25 @@ public class Flag {
 		this.user = user;
 	}
 
-	// No-args constructor (required by JPA)
-    public Flag() {}
+	
 
-    // Constructor for flagging a comment
-    public Flag(Question question,Comment comment, User user, String reason) {
-        this.question = question;
-    	this.comment = comment;
-        this.reason = reason;
-        this.user = user;
-    }
+	// Primary constructor: Can flag either a comment or a question
+	public Flag(Question question, Comment comment, User user, String reason) {
+	    this.question = question;
+	    this.comment = comment;
+	    this.user = user;
+	    this.reason = reason;
+	}
 
-    // Constructor for flagging a question
-    public Flag(Question question,User user, String reason) {
-        this.question = question;
-        this.user = user;
-        this.reason = reason;
-    }
+	// Constructor for flagging only a question
+	public Flag(Question question, User user, String reason) {
+	    this(question, null, user, reason);
+	}
+
+	// Constructor for flagging only a comment
+	public Flag(Comment comment, User user, String reason) {
+	    this(null, comment, user, reason);
+	}
 
 
 	public Long getId() {

@@ -4,12 +4,13 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor 
 
 @Entity
 @Table(name = "users")
@@ -162,9 +163,7 @@ public class User {
         this.referrals = referrals;
     }
 
-    // Default constructor required by Hibernate
-    public User() {
-    }
+    
 
     // Constructor to create user with name, email, and password
     public User(String name, String email, String password, String referralCode, Long referredBy) {

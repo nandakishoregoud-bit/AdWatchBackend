@@ -17,6 +17,7 @@ public class AdController {
     @Autowired
     private AdService adService;
 
+    
     // Record Ad Watch
     @PostMapping("/watch")
     public ResponseEntity<String> recordAdWatch(@RequestParam Long userId, @RequestParam int adDuration) {
@@ -44,16 +45,6 @@ public class AdController {
     }
 
 
-
-
-    
-	/*
-	 * @PostMapping("/api/ads/reward") public ResponseEntity<String>
-	 * rewardAdWatch(@RequestParam Long userId, @RequestParam int coinsEarned) { //
-	 * Logic to add coins to the user account userService.addCoinsToUser(userId,
-	 * coinsEarned); return ResponseEntity.ok("Coins added successfully"); }
-	 */
-    
     private void sendRewardToBackend(long userId, int coinsEarned) {
         String url = "http://your-spring-boot-api/api/ads/reward?userId=" + userId + "&coinsEarned=" + coinsEarned;
         // Use a network library (like Retrofit or OkHttp) to send the request to the backend
