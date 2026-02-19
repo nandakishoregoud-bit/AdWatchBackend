@@ -8,7 +8,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.15</version> <!-- Updated -->
-        <relativePath />
+        <relativePath/>
     </parent>
 
     <groupId>com.bezkoder</groupId>
@@ -53,7 +53,7 @@
         <dependency>
     <groupId>org.springdoc</groupId>
     <artifactId>springdoc-openapi-ui</artifactId>
-    <version>1.7.0</version>
+    <version>1.8.0</version>
 </dependency>
 
 <dependency>
